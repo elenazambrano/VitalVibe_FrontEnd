@@ -1,0 +1,12 @@
+.jumbotron {
+    background-image: url("../../../assets/Imagenes/WhatsApp-Image-2019-10-18-at-4.13.46-PM-1-1024x329.jpeg");
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+  }
+  .col-5{
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.632);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.507); 
+  }

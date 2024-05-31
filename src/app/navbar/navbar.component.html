@@ -1,0 +1,16 @@
+<div class="navbar">
+  <div class="logo">
+    <img src="./../../../assets/Imagenes/imagenTFG-removebg-preview.png" alt="Logo">
+    <span><a class = "text-light text-decoration-none" href="info">VitalVibe GYM</a></span>
+  </div>
+  <div class="nav-items">
+    <ul *ngIf="!user">
+      <li><a class= "btn btn-primary" href="/login">Login</a></li>
+      <li><a class="text-light text-decoration-none " href="/register">Sign up</a></li>
+    </ul>
+    <ul *ngIf="user">
+      <li><a class="btn text-light text-decoration-none" href="/home">Home</a></li>
+      <li><a class="btn btn-primary " (click)="closeSessionUser()">Cerrar sesión</a></li>
+    </ul>
+  </div>
+</div>

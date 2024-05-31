@@ -1,0 +1,46 @@
+<div class="jumbotron">
+  <h1>Regístrate en VitalVibe GYM</h1>
+  <p>Tu destino para una vida más saludable y activa</p>
+</div>
+<div class="d-flex justify-content-center w-100 align-items-center">
+  <form class="col-5 card mt-2 p-3" [formGroup]="myForm">
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleInputName" class="form-label">Nombre<span style="color: red;"> *</span></label>
+          <input type="text" class="form-control" id="exampleInputName" name="name" aria-describedby="nameHelp" formControlName="name" required
+          [ngClass]="{'is-invalid': myForm.get('name')!.invalid && myForm.get('name')!.touched}">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleInputSurname" class="form-label">Apellido<span style="color: red;"> *</span></label>
+          <input type="text" class="form-control" id="exampleInputSurname" name="surname" aria-describedby="surnameHelp" formControlName="surname"  required
+          [ngClass]="{'is-invalid': myForm.get('surname')!.invalid && myForm.get('surname')!.touched}">
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email<span style="color: red;"> *</span></label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" formControlName="email" required
+      [ngClass]="{'is-invalid': myForm.get('email')!.invalid && myForm.get('email')!.touched}">
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Contraseña<span style="color: red;"> *</span></label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password" formControlName="password"  required
+          [ngClass]="{'is-invalid': myForm.get('password')!.invalid && myForm.get('password')!.touched}">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleInputConfirmPassword" class="form-label">Confirmar Contraseña<span style="color: red;"> *</span></label>
+          <input type="password" class="form-control" id="exampleInputConfirmPassword" name="passwordconfirm" formControlName="passwordconfirm" required
+          [ngClass]="{'is-invalid':   this.myForm.get('password')?.value !== this.myForm.get('passwordconfirm')?.value || this.myForm.get('passwordconfirm')?.touched && !this.myForm.get('passwordconfirm')?.valid}">
+        </div>
+      </div>
+    </div>
+    <button  class="btn btn-primary" (click)="onSubmit()">Aceptar</button>
+  </form>
+</div>

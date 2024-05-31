@@ -1,0 +1,36 @@
+.jumbotron {
+    background-image: url("../../../assets/Imagenes/WhatsApp-Image-2019-10-18-at-4.13.46-PM-1-1024x329.jpeg");
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 20px 0;
+  }
+  .card {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.632);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.507); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+    border-radius: 10px;
+    color: black;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+   .card-content {
+    padding: 10px;
+  }
+  
+  .card-content h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .card-content p {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  

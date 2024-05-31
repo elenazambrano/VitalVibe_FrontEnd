@@ -1,0 +1,102 @@
+<div class="jumbotron">
+  <h1 class="jumbotron-heading">¡Bienvenido/a {{ user?.nombre }}!</h1>
+  <p class="jumbotron-paragraph">
+    "Comienza tu transformación hoy. ¡Estamos aquí para guiarte!"
+  </p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <h1 class="card-title mt-3">RUTINA</h1>
+        <h5>Seleccione uno para obtener su rutina:</h5>
+        <div class="card-body card-body-buttons">
+          <button class="btn btn-primary mx-1">Musculación</button>
+          <button class="btn btn-primary mx-1">Cardio</button>
+          <button class="btn btn-primary mx-1">Definición</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-3">
+      <div class="card">
+        <h1>IMC</h1>
+        <h5>
+          ¿Quieres saber tu índice de masa corporal? Introduce tu peso y altura:
+        </h5>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="peso" class="form-label">Peso (kg)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="peso"
+              name="peso"
+              min="40"
+              [(ngModel)]="peso"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="altura" class="form-label">Altura (cm)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="altura"
+              name="altura"
+              min="120"
+              [(ngModel)]="altura"
+            />
+          </div>
+          <div class="d-flex mt-3 justify-content-between align-items-center">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="calcularIMC()"
+            >
+              Calcular IMC
+            </button>
+            <h5
+              *ngIf="imc"
+              [ngClass]="{
+                'text-danger': imc > 30,
+                'text-warning': imc <= 30 && imc > 25,
+                'text-success': imc <= 25
+              }"
+            >
+              IMC: {{ imc.toFixed(2) }}
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card custom-card">
+        <h1>PAGOS</h1>
+        <h5>Lista de pagos</h5>
+        <table class="table-bordered custom-table">
+          <thead>
+            <tr>
+              <th>Inicio</th>
+              <th>Fin</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pago of pagos">
+              <td>{{ pago.fechaPagoInicio }}</td>
+              <td>{{ pago.fechaPagoFin }}</td>
+              <td>
+                <span
+                  [ngClass]="{
+                  'pago-pagado': pago.estado === 'Pagado',
+                  'pago-activo': pago.estado === 'Activo',
+                }"
+                  >{{ pago.estado }}</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

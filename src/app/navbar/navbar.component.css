@@ -1,0 +1,36 @@
+/* navbar.component.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f0f24b4;
+    padding: 1px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  
+  }
+  .logo img {
+    max-width: 60px;
+    height: auto;
+  }
+  .logo span {
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+  }
+  .nav-items ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-items ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+ 
+  
+  
