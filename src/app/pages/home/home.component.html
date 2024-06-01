@@ -8,18 +8,25 @@
   <div class="row">
     <div class="col-md-4">
       <div class="card">
-        <h1 class="card-title mt-3">RUTINA</h1>
-        <h5>Seleccione uno para obtener su rutina:</h5>
+        <h1 class="title">RUTINA</h1>
+        <img src="./../../../assets/Imagenes/f3.jpg" alt="Imagen" width="292" class="centrar-imagen">
         <div class="card-body card-body-buttons">
-          <button class="btn btn-primary mx-1">Musculación</button>
-          <button class="btn btn-primary mx-1">Cardio</button>
-          <button class="btn btn-primary mx-1">Definición</button>
+          <h5>Seleccione un tipo:</h5>
+          <button class="btn btn-primary mx-1" (click)="getEjercicios(1)">
+            Musculación
+          </button>
+          <button class="btn btn-primary mx-1" (click)="getEjercicios(3)">
+            Cardio
+          </button>
+          <button class="btn btn-primary mx-1" (click)="getEjercicios(2)">
+            Definición
+          </button>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-3">
       <div class="card">
-        <h1>IMC</h1>
+        <h1 class="title">IMC</h1>
         <h5>
           ¿Quieres saber tu índice de masa corporal? Introduce tu peso y altura:
         </h5>
@@ -69,8 +76,8 @@
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card custom-card">
-        <h1>PAGOS</h1>
+      <div class="card">
+        <h1 class="title">PAGOS</h1>
         <h5>Lista de pagos</h5>
         <table class="table-bordered custom-table">
           <thead>
@@ -81,7 +88,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let pago of pagos">
+            <tr
+              *ngFor="let pago of pagos; let i = index"
+              [ngClass]="{ even: i % 2 === 0 }"
+            >
               <td>{{ pago.fechaPagoInicio }}</td>
               <td>{{ pago.fechaPagoFin }}</td>
               <td>
@@ -93,6 +103,35 @@
                   >{{ pago.estado }}</span
                 >
               </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card" *ngIf="ejercicios">
+      <div>
+        <table class="table-bordered custom-table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Series</th>
+              <th>Reps</th>
+              <th>Descanso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let ejercicio of ejercicios; let i = index"
+              [ngClass]="{ even: i % 2 === 0 }"
+            >
+              <td>{{ ejercicio.nombre_ejercicio }}</td>
+              <td>{{ ejercicio.descripcion }}</td>
+              <td>{{ ejercicio.series }}</td>
+              <td>{{ ejercicio.repeticiones }}</td>
+              <td>{{ ejercicio.descanso }}</td>
             </tr>
           </tbody>
         </table>
